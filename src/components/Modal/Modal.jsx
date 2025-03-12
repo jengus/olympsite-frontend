@@ -2,7 +2,7 @@ import React from 'react';
 import * as M from './Modal.styles';
 import ReactDOM from 'react-dom';
 
-const Modal = ({ isOpen, onClose, title, children }) => {
+export const Modal = ({ isOpen, onClose, title, children }) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
@@ -19,4 +19,3 @@ const Modal = ({ isOpen, onClose, title, children }) => {
   );
 };
 
-export default Modal;

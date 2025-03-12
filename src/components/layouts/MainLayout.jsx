@@ -1,6 +1,6 @@
-import Header from "../Header/Header";
+import { Header } from "@components";
 
-export default function MainLayout({children}) {
+export function MainLayout({children}) {
     return (
         <>
         <Header/>

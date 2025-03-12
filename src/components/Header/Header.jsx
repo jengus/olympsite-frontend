@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import * as S from "./Header.styles";
-import { Paths } from "../../constants/routers";
-import { useUser } from "../../context/useUser";
-import Modal from "../Modal/Modal";
-import LoginForm from "../LoginForm/LoginForm";
+import { Paths } from "@constants";
+import { useUser } from "@context";
+import {Modal} from "@components"
+import { LoginForm } from "@components";
 
-const Header = () => {
+export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {user} = useUser();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -58,4 +58,3 @@ const Header = () => {
   );
 };
 
-export default Header;

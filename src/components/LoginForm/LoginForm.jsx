@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useUser } from "../../context/useUser";
+import { useUser } from "@context";
 import * as F from "./Login.styles";
 
-const LoginForm = ({ onSuccess }) => {
+export const LoginForm = ({ onSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
@@ -81,4 +81,3 @@ const LoginForm = ({ onSuccess }) => {
   );
 };
 
-export default LoginForm;

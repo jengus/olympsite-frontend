@@ -1,8 +1,9 @@
 import React from "react";
-import AppRoutes from "./routes/routes";
-import MainLayout from "./components/layouts/MainLayout";
+import { AppRoutes } from "@routes";
+import { MainLayout } from "@components";
 import { BrowserRouter  } from "react-router-dom";
-import { UserProvider } from "./context/UserProvider";
+import { UserProvider } from "@context";
+
 function App() {
 
 
