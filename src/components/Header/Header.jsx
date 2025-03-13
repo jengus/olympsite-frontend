@@ -35,7 +35,7 @@ export const Header = () => {
             <S.NavLink href={Paths.Main}>Главная</S.NavLink>
           </S.NavItem>
           <S.NavItem>
-            <S.NavLink href={Paths.Main}>Олимпиады</S.NavLink>
+            <S.NavLink href={Paths.Users}>Пользователи</S.NavLink>
           </S.NavItem>
           <S.NavItem onClick={handleProfileClick}>
             <S.NavLink href={Paths.Main}>
