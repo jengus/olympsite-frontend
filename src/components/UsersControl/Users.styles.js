@@ -6,7 +6,8 @@ export const UserContainer = styled.div`
 border-radius: 15px;
   background-color: white;
   flex-direction: column;
-  
+  border: 1px solid #43751a;
+  height: 85vh;
 `;
 export const HeaderContainer = styled.div`
     display: flex;
@@ -20,6 +21,7 @@ export const HeaderContainer = styled.div`
 `
 export const TableContainer = styled.div`
   overflow-x: auto;
+  overflow-y: auto;
 `;
 
 
@@ -29,6 +31,12 @@ export const StyledTable = styled.table`
   font-size: 14px;
   text-align: left;
 `;
+export const TableRow = styled.tr`
+    border-bottom: 1px solid #ddd;
+    &:last-child {
+    border:none;
+    }
+`;
 
 export const TableHeader = styled.th`
   padding: 12px;
@@ -37,12 +45,11 @@ export const TableHeader = styled.th`
   font-weight: bold;
   text-align: center;
     word-break: break-word;
-  white-space: normal;
+  
 `;
 
 export const TableCell = styled.td`
   padding: 12px;
-  border-bottom: 1px solid #ddd;
   text-align: center;
 `;
 
@@ -75,4 +82,36 @@ export const DeleteButton = styled.button`
       background-color: #c82333;
     }
   
+`;
+export const FilterContainer = styled.div`
+padding: 15px;
+display: flex;
+ gap:10px;
+ flex-direction: row;
+ width: 100%;
+ flex-wrap: wrap;
+`;
+export const SearchInput = styled.input`
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+`;
+
+export const RoleFilter = styled.select`
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+export const OrgFilter = styled.select`
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+`;
+
+export const OlympiadFilter = styled.select`
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 `;
