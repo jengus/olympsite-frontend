@@ -3,10 +3,27 @@ import { HomePage } from "@pages";
 import { AboutPage } from "@pages";
 import { Paths } from "@constants";
 import { UsersPage } from "@pages";
+import { ProtectedRoute } from "./ProtectedRoute";
+import { useUser } from "@context";
 
-export const AppRoutes = () => (
+export const AppRoutes = () => {
+  const { user, loading } = useUser();
+  if (loading) {
+    return <div>Загрузка...</div>;
+  }
+  return (
     <Routes>
       <Route path={Paths.Main} element={<HomePage />} />
-      <Route path={Paths.Users} element={<UsersPage />} />
+      <Route
+        element={
+          <ProtectedRoute
+            userRoleId={user?.role_id}
+            requiredPermission="view_users"
+          />
+        }
+      >
+        <Route path={Paths.Users} element={<UsersPage />} />
+      </Route>
     </Routes>
-);
+  );
+};

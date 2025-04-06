@@ -4,11 +4,13 @@ import { UserContext } from "./UserContext";
 export const UserProvider = (props) => {
   const [token, setToken] = useState(localStorage.getItem("olympsite"));
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchUser = async () => {
       if (!token) {
         setUser(null);
+        setLoading(false);
         return;
       }
 
@@ -35,9 +37,12 @@ export const UserProvider = (props) => {
         console.error("Fetch user error:", error.message);
         setToken(null);
         setUser(null);
+      } finally {
+        setLoading(false);
       }
     };
 
+    setLoading(true);
     fetchUser();
   }, [token]);
 
@@ -50,7 +55,7 @@ export const UserProvider = (props) => {
   }, [token]);
 
   return (
-    <UserContext.Provider value={{ token, setToken, user }}>
+    <UserContext.Provider value={{ token, setToken, user, loading }}>
       {props.children}
     </UserContext.Provider>
   );
