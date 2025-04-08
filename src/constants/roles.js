@@ -1,26 +1,28 @@
+import { Permissions } from "./permissions";
+
 export const ROLES = [
   {
     id: 1,
     name: "Пользователь",
-    permissions: ["view_profile"],
+    permissions: [Permissions.VIEW_PROFILE],
   },
   {
     id: 2,
     name: "Администратор",
-    permissions: ["view_profile", "view_users", "edit_olymps"],
+    permissions: [Permissions.VIEW_PROFILE, Permissions.VIEW_USERS, Permissions.EDIT_OLYMPS],
   },
   {
     id: 3,
     name: "Организатор",
-    permissions: ["view_profile", "view_users", "edit_olymps", "check_olymps"],
+    permissions: [Permissions.VIEW_PROFILE, Permissions.VIEW_USERS, Permissions.EDIT_OLYMPS, Permissions.CHECK_OLYMPS],
   },
   { id: 4,
     name: "Эксперт",
-    permissions: ["view_profile", "check_olymps"] },
+    permissions: [Permissions.VIEW_PROFILE, Permissions.CHECK_OLYMPS] },
   { id: 5,
     name: "Участник",
-    permissions: ["view_profile", "pass_olymp"] },
+    permissions: [Permissions.VIEW_PROFILE, Permissions.PASS_OLYMPS] },
   { id: 6,
     name: "Команда",
-    permissions: ["view_profile", "pass_olymp"] },
+    permissions: [Permissions.VIEW_PROFILE, Permissions.PASS_OLYMPS] },
 ];

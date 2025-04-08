@@ -5,6 +5,7 @@ import { useUser } from "@context";
 import {Modal} from "@components"
 import { LoginForm } from "@components";
 import { hasPermission } from "@utils";
+import { Permissions } from "@constants";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,7 @@ export const Header = () => {
           <S.NavItem>
             <S.NavLink href={Paths.Main}>Главная</S.NavLink>
           </S.NavItem>
-          {hasPermission(user?.role_id, "view_users") && 
+          {hasPermission(user?.role_id, Permissions.VIEW_USERS) && 
           <S.NavItem>
           <S.NavLink href={Paths.Users}>Пользователи</S.NavLink>
         </S.NavItem>}          

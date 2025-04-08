@@ -5,6 +5,7 @@ import { Paths } from "@constants";
 import { UsersPage } from "@pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { useUser } from "@context";
+import { Permissions } from "@constants";
 
 export const AppRoutes = () => {
   const { user, loading } = useUser();
@@ -18,7 +19,7 @@ export const AppRoutes = () => {
         element={
           <ProtectedRoute
             userRoleId={user?.role_id}
-            requiredPermission="view_users"
+            requiredPermission={Permissions.VIEW_USERS}
           />
         }
       >
